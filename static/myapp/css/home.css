@@ -114,7 +114,7 @@ body {
 .featured-watches {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .watch-card {
@@ -126,6 +126,7 @@ body {
     margin-bottom: 20px;
     transition: box-shadow 0.3s ease;
 }
+
 
 .watch-card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
