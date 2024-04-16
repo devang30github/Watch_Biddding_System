@@ -1,0 +1,44 @@
+/* list_watches.css */
+
+.watch-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.watch-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.watch-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.watch-card .info {
+    padding: 20px;
+}
+
+.watch-card h3 {
+    margin-top: 0;
+}
+
+.watch-card p {
+    margin-bottom: 10px;
+}
+
+.bid-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bid-button:hover {
+    background-color: #0056b3;
+}

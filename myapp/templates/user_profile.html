@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>User Profile</h2>
+<h3>Welcome, {{ request.user.username }}</h3>
+
+<h4>Your Bidding History:</h4>
+<table>
+    <tr>
+        <th>Watch</th>
+        <th>Your Bid</th>
+        <th>Highest Bid</th>
+        <th>Status</th>
+    </tr>
+    {% for bid in user_bids %}
+    <tr>
+        <td>{{ bid.watch.name }}</td>
+        <td>${{ bid.amount }}</td>
+        <td>${{ bid.watch.bids.aggregate(max_bid=models.Max('amount'))|default:bid.watch.starting_bid }}</td>
+        <td>{% if bid.watch.bid_end_date < now %}Closed{% else %}Open{% endif %}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No bids placed yet.</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

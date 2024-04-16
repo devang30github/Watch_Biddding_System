@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Available Watches</h2>
+{% for watch in watches %}
+    <div>
+        <h3>{{ watch.name }}</h3>
+        <p>{{ watch.description }}</p>
+        <a href="{% url 'place_bid' watch.id %}">Place a bid</a>
+    </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Watch Bidding System{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myapp/css/base.css' %}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+
+<header>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Watch Bidding</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'add_watch' %}">List Item</a></li>
+                <li><a href="{% url 'list_watches' %}">Bid Item</a></li>
+                <li><a href="{% url 'user_profile' %}">My Profile</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <!-- Footer content -->
+    <div class="container">
+        <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <div class="social-media">
+            <a href="#"><img src="{% static 'myapp/images/facebook-icon.png' %}" alt="Facebook"></a>
+            <a href="#"><img src="{% static 'myapp/images/twitter-icon.png' %}" alt="Twitter"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+    </div>
+</footer>
+
+{% block javascript %}
+    <!-- Add your JavaScript links here -->
+    <script src="{% static 'myapp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'myapp/js/bootstrap.min.js' %}"></script>
+    <!-- Add your custom JavaScript link if any -->
+{% endblock %}
+
+</body>
+</html>
