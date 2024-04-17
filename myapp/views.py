@@ -74,15 +74,17 @@ def place_bid(request, watch_id):
         form = BidForm(request.POST)
         if form.is_valid():
             bid_amount = form.cleaned_data['amount']
-            highest_bid = watch.bids.aggregate(Max('amount'))['amount__max'] or watch.starting_bid
-            if bid_amount > highest_bid:
+            current_bid = watch.current_bid
+            if bid_amount > current_bid:
                 bid = form.save(commit=False)
                 bid.watch = watch
                 bid.bidder = request.user
                 bid.save()
+                watch.current_bid = bid_amount
+                watch.save()
                 return redirect('list_watches')
             else:
-                messages.error(request, "Your bid must be higher than the current highest bid.")
+                messages.error(request, "Your bid must be higher than the current bid.")
     else:
         form = BidForm()
     return render(request, 'place_bid.html', {'form': form, 'watch': watch})

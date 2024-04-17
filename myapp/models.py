@@ -1,5 +1,3 @@
-#models.py
-# Create your models here.
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -8,6 +6,7 @@ class Watch(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='media/watches/')
     starting_bid = models.DecimalField(max_digits=9, decimal_places=2)
+    current_bid = models.DecimalField(max_digits=10, decimal_places=2,default=0)
     bid_end_date = models.DateTimeField()
     owner = models.ForeignKey(User, related_name='watches', on_delete=models.CASCADE)
 

@@ -34,7 +34,7 @@ class WatchForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter name'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Enter description'}),
             'starting_bid': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter starting bid'}),
-            'bid_end_date': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter bid end date'}),
+            'bid_end_date': forms.DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Enter bid end date','type': 'date'}),
         }
 
 class BidForm(forms.ModelForm):

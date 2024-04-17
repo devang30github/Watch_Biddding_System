@@ -1,11 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'myapp/css/list_watches.css' %}">
+{% endblock %}
+
 {% block content %}
-<h2>Available Watches</h2>
-{% for watch in watches %}
-    <div>
-        <h3>{{ watch.name }}</h3>
-        <p>{{ watch.description }}</p>
-        <a href="{% url 'place_bid' watch.id %}">Place a bid</a>
+    <h2>Available Watches</h2>
+    <div class="container">
+        {% for watch in watches %}
+            <div class="watch-card">
+                <img src="{{ watch.image.url }}" alt="{{ watch.name }}">
+                <h3>{{ watch.name }}</h3>
+                <p>{{ watch.description }}</p>
+                {% if watch.current_bid %}
+                    <p>Current Bid: ${{ watch.current_bid }}</p>
+                {% else %}
+                    <p>Starting Bid: ${{ watch.starting_bid }}</p>
+                {% endif %}
+                <a href="{% url 'place_bid' watch.id %}" class="btn">Place a Bid</a>
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
 {% endblock %}
