@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-right: 20px;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Header Styles */
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.header .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 50px 0;
+}
+
+.buttons {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.buttons .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff; /* Blue color for "List Item" button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons .btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+/* Additional styling for "Bid Item" button */
+.buttons .btn-bid {
+    background-color: #28a745; /* Green color for "Bid Item" button */
+}
+
+.buttons .btn-bid:hover {
+    background-color: #218838; /* Darker shade of green on hover */
+}
+
+.featured-watches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.watch-card {
+    width: calc(33.33% - 20px);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.watch-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.watch-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.watch-card h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.watch-card p {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #666;
+}

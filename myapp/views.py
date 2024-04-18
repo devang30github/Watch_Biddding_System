@@ -66,6 +66,12 @@ def list_watches(request):
 @login_required
 def place_bid(request, watch_id):
     watch = get_object_or_404(Watch, pk=watch_id)
+    
+    if request.user == watch.owner:
+        starting_bid = watch.starting_bid
+    else:
+        starting_bid = watch.current_bid
+    
     if timezone.now() > watch.bid_end_date:
         messages.error(request, "Bidding for this watch has ended.")
         return redirect('list_watches')
@@ -74,8 +80,7 @@ def place_bid(request, watch_id):
         form = BidForm(request.POST)
         if form.is_valid():
             bid_amount = form.cleaned_data['amount']
-            current_bid = watch.current_bid
-            if bid_amount > current_bid:
+            if bid_amount >= starting_bid:
                 bid = form.save(commit=False)
                 bid.watch = watch
                 bid.bidder = request.user
@@ -84,9 +89,10 @@ def place_bid(request, watch_id):
                 watch.save()
                 return redirect('list_watches')
             else:
-                messages.error(request, "Your bid must be higher than the current bid.")
+                messages.error(request, "Your bid must be greater than or equal to the starting bid.")
     else:
         form = BidForm()
+    
     return render(request, 'place_bid.html', {'form': form, 'watch': watch})
 
 @login_required
