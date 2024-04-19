@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block css %}
     <link rel="stylesheet" href="{% static 'myapp/css/add_watch.css' %}">
 {% endblock %}
+
 {% block content %}
 <h2>Add New Watch</h2>
 <form method="post" enctype="multipart/form-data">
@@ -10,4 +12,4 @@
     {{ form.as_p }}
     <button type="submit">Add Watch</button>
 </form>
-{% endblock %}
+{% endblock content %}

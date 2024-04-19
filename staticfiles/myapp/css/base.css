@@ -45,38 +45,45 @@ body {
 }
 
 /* Footer Styles */
-.footer {
+/* Footer Styles */
+footer {
     background-color: #343a40;
     color: #fff;
     padding: 30px 0;
     text-align: center;
 }
 
-.footer .footer-links {
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
     list-style: none;
     padding: 0;
     margin-bottom: 20px;
 }
 
-.footer .footer-links li {
+.footer-links li {
     display: inline;
     margin-right: 20px;
 }
 
-.footer .footer-links li a {
+.footer-links li a {
     color: #fff;
     text-decoration: none;
 }
 
-.footer .social-media {
+.social-media {
     margin-top: 20px;
 }
 
-.footer .social-media a {
+.social-media a {
     margin-right: 10px;
 }
 
-.footer .social-media img {
+.social-media img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
