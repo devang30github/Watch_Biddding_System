@@ -1,16 +1,30 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block title %}
-    Home - Watch Bidding System
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Watch Bidding System</title>
+  <link rel="stylesheet" href="{% static 'myapp/css/home.css' %}">
+</head>
 
-{% block css %}
-    <link rel="stylesheet" href="{% static 'myapp/css/home.css' %}">
-{% endblock %}
-
-{% block content %}
+<body>
     <!-- Header Section -->
-    <header class="header">
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">Watch Bidding</a>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'add_watch' %}">List Item</a></li>
+                    <li><a href="{% url 'list_watches' %}">Bid Item</a></li>
+                    <li><a href="{% url 'user_profile' %}">My Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    
         <div class="container">
             <h1>Welcome to Watch Bidding</h1>
             <p>A platform to bid on exclusive watches</p>
@@ -43,4 +57,13 @@
             </div>
         </div>
     </section>
-{% endblock content %}
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

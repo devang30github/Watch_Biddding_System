@@ -1,84 +1,144 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
 }
 
 .container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: relative;
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-right: 20px;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: #fff;
 }
 
 
+/* Header Styles */
+header {
+    background-image: url('header-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 20px;
+}
 
 /* Main Content Styles */
 .main-content {
     padding: 50px 0;
+    text-align: center;
 }
 
 .buttons {
-    text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
-.buttons .btn {
+.btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #007bff; /* Blue color for "List Item" button */
+    background-color: #4CAF50;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     transition: background-color 0.3s ease;
 }
 
-.buttons .btn:hover {
-    background-color: #0056b3; /* Darker shade of blue on hover */
+.btn:hover {
+    background-color: #2E8B57;
 }
 
-/* Additional styling for "Bid Item" button */
-.buttons .btn-bid {
-    background-color: #28a745; /* Green color for "Bid Item" button */
+.btn-bid {
+    background-color: #ffcc00;
 }
 
-.buttons .btn-bid:hover {
-    background-color: #218838; /* Darker shade of green on hover */
-}
-
+/* Featured Watches Styles */
 .featured-watches {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .watch-card {
-    width: calc(33.33% - 20px);
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: box-shadow 0.3s ease;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-
 .watch-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 .watch-card img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 
 .watch-card h3 {
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 .watch-card p {
-    font-size: 0.9rem;
-    margin-top: 5px;
-    color: #666;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
 }
