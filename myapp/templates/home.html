@@ -14,8 +14,8 @@
         <!-- Navbar -->
         <nav class="navbar">
             <div class="container">
-                <a href="#" class="logo">Watch Bidding</a>
                 <ul class="nav-links">
+                    <li><a href="#" class="logo">Watch Bidding</a></li>
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'add_watch' %}">List Item</a></li>
                     <li><a href="{% url 'list_watches' %}">Bid Item</a></li>
@@ -25,15 +25,15 @@
             </div>
         </nav>
     
-        <div class="container">
-            <h1>Welcome to Watch Bidding</h1>
-            <p>A platform to bid on exclusive watches</p>
-        </div>
     </header>
 
     <!-- Main Content Section -->
     <section class="main-content">
         <div class="container">
+            <h1>Welcome to Watch Bidding</h1>
+            <p>A platform to bid on exclusive watches</p>
+        </div>
+        <div class="container1">
             <div class="buttons">
                 <a href="{% url 'add_watch' %}" class="btn">List Item</a>
                 <a href="{% url 'list_watches' %}" class="btn btn-bid">Bid Item</a>
