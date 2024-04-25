@@ -10,13 +10,16 @@ from django.utils import timezone
 from .forms import UserRegistrationForm, UserLoginForm
 from .forms import WatchForm, BidForm
 from .models import Watch, Bid
+from django.db.models import F, Value, Case, When, DecimalField
+
 
 
 def index(request):
     return render(request, 'index.html')
 
 def home(request):
-    return render(request, 'home.html')
+    top_watches = Watch.objects.order_by('-current_bid')[:3]
+    return render(request, 'home.html', {'top_watches': top_watches})
 
 def register(request):
     if request.method == 'POST':
@@ -99,4 +102,5 @@ def place_bid(request, watch_id):
 def user_profile(request):
     user_bids = Bid.objects.filter(bidder=request.user).select_related('watch').order_by('-bid_time')
     return render(request, 'user_profile.html', {'user_bids': user_bids})
+
 

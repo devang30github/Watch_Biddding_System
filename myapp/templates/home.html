@@ -1,3 +1,4 @@
+<!-- home.html -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -39,21 +40,16 @@
                 <a href="{% url 'list_watches' %}" class="btn btn-bid">Bid Item</a>
             </div>
             <!-- Featured Watches -->
-            <div class="featured-watches">
-                <!-- Featured watch cards -->
-                <div class="watch-card">
-                    <img src="/media/images/watch1.jpg" alt="Watch 1">
-                    <h3>Watch Name</h3>
-                    <p>Description of the watch...</p>
-                    <p>Current Bid: $1000</p>
-                </div>
-                <div class="watch-card">
-                    <img src="/media/images/watch3.jpg" alt="Watch 2">
-                    <h3>Watch Name</h3>
-                    <p>Description of the watch...</p>
-                    <p>Current Bid: $1000</p>
-                </div>
-                <!-- Add more featured watch cards as needed -->
+            <div class="featured_watches">
+                {% for watch in top_watches %}
+                    <div class="watch-card">
+                        <img src="{{ watch.image.url }}" alt="{{ watch.name }}">
+                        <h3>{{ watch.name }}</h3>
+                        <p>{{ watch.description }}</p>
+                        <p>Current Bid: ${{ watch.current_bid }}</p>
+                        <a href="{% url 'place_bid' watch.id %}" class="btn">Place a Bid</a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>

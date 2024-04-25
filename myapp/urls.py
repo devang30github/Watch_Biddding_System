@@ -12,4 +12,5 @@ urlpatterns = [
     path('watches/', views.list_watches, name='list_watches'),
     path('bid/<int:watch_id>/', views.place_bid, name='place_bid'),
     path('profile/', views.user_profile, name='user_profile'),
+    
 ]
