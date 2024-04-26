@@ -1,65 +1,35 @@
-<!-- home.html -->
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Watch Bidding System</title>
-  <link rel="stylesheet" href="{% static 'myapp/css/home.css' %}">
-</head>
 
-<body>
-    <!-- Header Section -->
-    <header>
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="container">
-                <ul class="nav-links">
-                    <li><a href="#" class="logo">Watch Bidding</a></li>
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'add_watch' %}">List Item</a></li>
-                    <li><a href="{% url 'list_watches' %}">Bid Item</a></li>
-                    <li><a href="{% url 'user_profile' %}">My Profile</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                </ul>
+{% block title %}
+Home - Watch Bidding System
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to Watch Bidding</h1>
+    <p>A platform to bid on exclusive watches</p>
+</div>
+<div class="container1">
+    <div class="buttons">
+        <a href="{% url 'add_watch' %}" class="btn">List Item</a>
+        <a href="{% url 'list_watches' %}" class="btn btn-bid">Bid Item</a>
+    </div>
+    <!-- Featured Watches -->
+    <div class="featured_watches">
+        {% for watch in top_watches %}
+            <div class="watch-card">
+                <img src="{{ watch.image.url }}" alt="{{ watch.name }}">
+                <h3>{{ watch.name }}</h3>
+                <p>{{ watch.description }}</p>
+                <p>Current Bid: ${{ watch.current_bid }}</p>
+                <a href="{% url 'place_bid' watch.id %}" class="btn">Place a Bid</a>
             </div>
-        </nav>
-    
-    </header>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
 
-    <!-- Main Content Section -->
-    <section class="main-content">
-        <div class="container">
-            <h1>Welcome to Watch Bidding</h1>
-            <p>A platform to bid on exclusive watches</p>
-        </div>
-        <div class="container1">
-            <div class="buttons">
-                <a href="{% url 'add_watch' %}" class="btn">List Item</a>
-                <a href="{% url 'list_watches' %}" class="btn btn-bid">Bid Item</a>
-            </div>
-            <!-- Featured Watches -->
-            <div class="featured_watches">
-                {% for watch in top_watches %}
-                    <div class="watch-card">
-                        <img src="{{ watch.image.url }}" alt="{{ watch.name }}">
-                        <h3>{{ watch.name }}</h3>
-                        <p>{{ watch.description }}</p>
-                        <p>Current Bid: ${{ watch.current_bid }}</p>
-                        <a href="{% url 'place_bid' watch.id %}" class="btn">Place a Bid</a>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 My Website. All rights reserved.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'myapp/css/home.css' %}">
+{% endblock %}

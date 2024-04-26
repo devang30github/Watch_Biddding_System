@@ -1,77 +1,78 @@
-/* Reset CSS */
+/* home.css */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  /* Body Styles */
-  body {
+}
+
+/* Body Styles */
+body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
     color: #333;
-  }
-  
-  /* Header Styles */
-  header {
+}
+
+/* Header Styles */
+header {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
-  }
-  
-  .navbar {
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-  }
-  
-  .logo {
+}
+
+.logo {
     font-size: 24px;
     text-decoration: none;
     color: #fff;
     margin-right: 550px;
-  }
-  
-  .nav-links {
+}
+
+.nav-links {
     list-style: none;
     display: flex;
-  }
-  
-  .nav-links li {
+}
+
+.nav-links li {
     display: inline;
     margin-right: 40px;
-  }
-  
-  .nav-links li a {
+}
+
+.nav-links li a {
     text-decoration: none;
     color: #fff;
     font-size: 16px;
-  }
-  
-  /* Main Content Styles */
-  .main-content {
+}
+
+/* Main Content Styles */
+.main-content {
     padding: 50px 0;
     text-align: center;
-  }
-  
-  .container {
+}
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 36px;
     margin-bottom: 20px;
-  }
-  
-  p {
+}
+
+p {
     font-size: 18px;
     margin-bottom: 20px;
-  }
-  
-  /* Buttons */
-  .btn {
+}
+
+/* Buttons */
+.btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #333;
@@ -79,77 +80,74 @@
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     background-color: #555;
-  }
-  
-  .btn-bid {
+}
+
+.btn-bid {
     background-color: #ff9900;
-  }
-  
-  
-  /* CSS for featured watches */
+}
+
+/* CSS for featured watches */
 .featured_watches {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .watch-card {
-  width: 300px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-  margin-bottom: 20px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 20px;
 }
 
 .watch-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .watch-card img {
-  width: 100%;
-  border-radius: 10px 10px 0 0;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
 }
 
 .watch-card h3 {
-  padding: 10px;
-  margin: 0;
+    padding: 10px;
+    margin: 0;
 }
 
 .watch-card p {
-  padding: 0 10px 10px 10px;
-  margin: 0;
+    padding: 0 10px 10px 10px;
+    margin: 0;
 }
 
 .watch-card .btn {
-  display: block;
-  width: calc(100% - 20px);
-  margin: 0 auto;
-  margin-bottom: 10px;
-  padding: 10px;
-  text-align: center;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+    display: block;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .watch-card .btn:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
-  
-  /* Footer Styles */
-  footer {
+/* Footer Styles */
+footer {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
     text-align: center;
-  }
-  
+}
